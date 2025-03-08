@@ -40,15 +40,16 @@ const BackEmailScreen = ({navigation}) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    
     backgroundColor: 'white',
     paddingHorizontal: 20,
-    paddingTop: 20,
+    paddingTop: 24,
   },
   iconStyle: {
     marginTop: 40,
   },
   textContainer: {
-    marginTop: 20,
+    marginTop: 25,
     marginBottom: 20,
     justifyContent: 'center',
     alignItems: 'center',
@@ -67,12 +68,10 @@ const styles = StyleSheet.create({
     marginTop: 10,
     textAlign: 'center',
   },
-  inputTextContainer: {
-    marginTop: 40,
-  },
+ 
   label: {
     fontWeight: 'bold',
-    marginBottom: 5,
+    marginBottom:  15,
   },
   input: {
     borderWidth: 1,
@@ -89,10 +88,15 @@ const styles = StyleSheet.create({
   reSubmitText: {
     color: 'rgba(61, 83, 0, 1)',
     fontWeight: '700',
+    
   },
   buttonContainerStyle: {
-    marginTop: 100,
-    borderRadius: 30,
+    
+    alignSelf: 'center',
+    marginTop: '34%',
+    width: '90%',
+    height: 60,
+    borderRadius: 20,
   },
 });
 
