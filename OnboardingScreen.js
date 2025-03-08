@@ -1,78 +1,102 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, ImageBackground } from 'react-native';
-import UniversalButton from '../UniversalButton';
-import { useNavigation } from '@react-navigation/native';
-const OnboardingScreen = ({ navigation }) => {
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  StyleSheet,
+  ImageBackground,
+  ScrollView,
+} from 'react-native';
+UniversalButton;
+import {useNavigation} from '@react-navigation/native';
+import {ICONS} from '../../Constants/icons';
+import UniversalButton from '../../Components/universalButton';
+const OnboardingScreen = ({navigation}) => {
   return (
-    <ImageBackground
-      source={require('../asserts/Onbording/Onbording-background.png')} // Path to your background image
-      style={styles.background}
-    >
-      <View style={styles.container}>
-        <Text style={styles.title}>Let's Begin Your Smart Farming Journey</Text>
+    
+      <ImageBackground
+              source={require('../../Assets/Icons/Onbording-background.png')} // Background Image
+              style={styles.backgroundContainer}>
 
-        {/* Subtitle */}
-        <Text style={styles.subtitle}>Empowering Farmers Through Smart Technology</Text>
+      <View style={styles.mainContainer}>
 
-        {/* Get Started Button */}
-        <UniversalButton
-        label="GET STARTED"
-        onPress={() => navigation.navigate('Language')}
-        
-      />
+        <View style={styles.textContainer}>
+          <Text style={styles.titleText}>
+            Let's Begin Your Smart {"\n"}Farming Journey
+          </Text>
+          {/* Subtitle */}
+          <Text style={styles.subtitleText}>
+            Empowering Farmers Through 
+            {"\n"} Smart Technology
+          </Text>
+
+          {/* Get Started Button */}
+          <View style={styles.buttonContainer}>
+            <UniversalButton
+              label="GET STARTED"
+              onPress={() => navigation.navigate('SignInScreen')}
+              buttonStyle={styles.buttonStyle}
+              arrowIcon={<ICONS.largeArrow />}
+            />
+          </View>
+        </View>
       </View>
-    </ImageBackground>
+      </ImageBackground>
+ 
+    
   );
 };
 
 const styles = StyleSheet.create({
-  background: {
+  mainContainer: {
     flex: 1,
-    resizeMode: 'cover', // Cover the entire screen
-    justifyContent: 'center',
+    resizeMode: 'cover',
+    paddingHorizontal: 20,
+    paddingTop: '127%',
+
   },
-  container: {
+
+  backgroundContainer: {
     flex: 1,
+    resizeMode: 'cover',
     justifyContent: 'center',
     alignItems: 'center',
-   // backgroundColor: 'rgba(0, 0, 0, 0.5)', // Semi-transparent overlay
-    padding: 20,
   },
-  title: {
-    
-    marginTop: 420,
+
+  textContainer: {
+    marginTop: 30,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingHorizontal: 20,
+  },
+  titleText: {
     fontSize: 28,
     fontWeight: 'bold',
     color: '#3D5300',
     textAlign: 'center',
-    marginBottom: 20,
+    marginBottom: 16,
   },
-  subtitle: {
-    paddingLeft: 50 ,
-    paddingRight: 50,
-    margin: 0 ,
+  subtitleText: {
     fontSize: 18,
     color: '#00000',
     textAlign: 'center',
     fontWeight: 'bold',
-    marginBottom: 40,
   },
-  button: {
-    backgroundColor: '#4CAF50', // Green color for the button
-    paddingVertical: 15,
+  buttonContainer: {
+    marginTop: 30,
+    width: '130%',
+    marginTop: 40 ,
+  },
+  buttonStyle: {
+   
+    paddingVertical: 20,
     paddingHorizontal: 30,
-    borderRadius: 8,
-    elevation: 3, // Shadow for Android
-    shadowColor: '#000', // Shadow for iOS
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.3,
     shadowRadius: 3,
-  },
-  buttonText: {
-    
-    color: '#FFFFFF',
-    fontSize: 18,
-    fontWeight: '600',
+    marginBottom: 40,
+    justifyContent: 'space-around',
+  
   },
 });
 
